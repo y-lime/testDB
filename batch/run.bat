@@ -12,9 +12,7 @@ echo;
 
 echo Start to execute SQL INSERT.
 call .\deleteData.bat
-call .\deleteData_local.bat
 call .\insertData.bat
-call .\insertData_local.bat
 echo Finish executing SQL INSERT.
 echo;
 

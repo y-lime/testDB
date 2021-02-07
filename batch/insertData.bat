@@ -2,7 +2,7 @@
 
 set USERID=user
 set DBNAME=database
-set HOST=192.168.10.60
+set HOST=localhost
 set PORT=5432
 set PGPASSWORD=user
 
