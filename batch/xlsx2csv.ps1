@@ -32,7 +32,7 @@ ForEach($file in (Get-ChildItem $xlsx_folder -Filter *.xlsx))
     # ブックを開く
     $Workbook = $excel.Workbooks.Open($file.Fullname)
     # ファイル名を修正
-    $newName = ($file.Fullname).Replace($file.Extension,".csv").Replace("_xlsx","_csv")
+    $newName = ($file.Fullname).Replace($file.Extension,".csv").Replace("table_xlsx","table_csv")
     # csvとして保存する
     $Workbook.SaveAs($newName,6)
     # ブックを閉じる
