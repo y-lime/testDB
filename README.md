@@ -20,8 +20,7 @@
 |insertData.bat|insertDataフォルダに格納されたsqlファイルを実行し、DBの初期化を実行する。_localはローカルホストのDBに対して実行。|
 |deleteData.bat|deleteDataフォルダに格納されたsqlファイルを実行し、DBのデータ削除を実行する。_localはローカルホストのDBに対して実行。|
 |selectData.bat|selectDataフォルダに格納されたsqlファイルを実行し、DBのデータ取得を実行し、dumpフォルダにテーブルごとのcsvファイルとして格納。|
-|updateSKJ.bat|T_CM90_SKJテーブルの日付カラムを実行日の日付に更新。|
-|run.bat|table_xlsxフォルダに格納されたxlsxファイルを元に、DBの初期化を実行。既存データの全削除、初期化データの全挿入、日付データの更新をlocalhostのDBに対して実行。|
+|run.bat|table_xlsxフォルダに格納されたxlsxファイルを元に、DBの初期化を実行。既存データの全削除、初期化データの全挿入をlocalhostのDBに対して実行。|
 
 ## ディレクトリ構成
 |ディレクトリ|説明|
