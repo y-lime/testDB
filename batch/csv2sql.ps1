@@ -19,7 +19,7 @@ function csv2insertsql($file)
     {
         if($row_cnt -eq 0){
             $columns = $row
-            Write-Output '\encoding SJIS' > $outfile
+            Write-Output '\encoding SJIS' | Out-File -Encoding default $outfile
         }else{
             $values = $row
             $values = $values -replace ",", "','"
@@ -27,7 +27,7 @@ function csv2insertsql($file)
             $values = $values -replace "$", "'"
             $values = $values -replace "%{empty}", ""
             $values = $values -replace "'%{null}'", "NULL"
-            Write-Output "INSERT INTO ${table} (${columns}) VALUES (${values});" >> $outfile
+            Write-Output "INSERT INTO ${table} (${columns}) VALUES (${values});" | Out-File -Encoding default -Append $outfile
         }
         $row_cnt = $row_cnt + 1
     }
@@ -43,8 +43,8 @@ function csv2deletesql($file)
     $table = [System.IO.Path]::GetFileNameWithoutExtension($file)
     $outfile = "..\deleteData\" + $table + ".sql"
 
-    Write-Output '\encoding SJIS' > $outfile
-    Write-Output "DELETE FROM ${table};" >> $outfile
+    Write-Output '\encoding SJIS' | Out-File -Encoding default $outfile
+    Write-Output "DELETE FROM ${table};" | Out-File -Encoding default -Append $outfile
 }
 
 <#
@@ -57,8 +57,8 @@ function csv2selectsql($file)
     $table = [System.IO.Path]::GetFileNameWithoutExtension($file)
     $outfile = "..\selectData\" + $table + ".sql"
 
-    Write-Output '\encoding SJIS' > $outfile
-    Write-Output "SELECT * FROM ${table};" >> $outfile
+    Write-Output '\encoding SJIS' | Out-File -Encoding default $outfile
+    Write-Output "SELECT * FROM ${table};" | Out-File -Encoding default -Append $outfile
 }
 
 <#
